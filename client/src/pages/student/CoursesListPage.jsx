@@ -6,4 +6,4 @@ const CoursesListPage = () => {
   )
 }
 
-export default CoursesListPage
+export default CoursesListPage;

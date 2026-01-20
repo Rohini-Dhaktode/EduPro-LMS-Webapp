@@ -16,13 +16,14 @@ import NavbarComp from './components/student/NavbarComp'
 
 const App = () => {
   const isEducatorRoute = useMatch('/educator/*')
+  
   return (
     <div className='text-default min-h-screen bg-white'>
      {!isEducatorRoute &&  <NavbarComp/>}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/course-list" element={<CoursesListPage />} />
-        <Route path="/course-list:input" element={<CoursesListPage />} />
+        <Route path="/course-list/:input" element={<CoursesListPage />} />
         <Route path="/course/:id" element={<CourseDetailsPage />} />
         <Route path="/my-enrollments" element={<MyEnrollmentsPage />} />
         <Route path="/player/:courseId" element={<PlayerPage />} />
