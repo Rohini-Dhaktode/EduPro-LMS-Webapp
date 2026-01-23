@@ -2,6 +2,9 @@ import React from 'react'
 import HeroComp from '../../components/student/HeroComp'
 import CompaniesComp from '../../components/student/CompaniesComp'
 import CoursesSectionComp from '../../components/student/CoursesSectionComp'
+import TestimonialSectionComp from '../../components/student/TestimonialSectionComp'
+import CallToActionComp from '../../components/student/CallToActionComp'
+import FooterComp from '../../components/student/FooterComp'
 
 const HomePage = () => {
   return (
@@ -9,6 +12,9 @@ const HomePage = () => {
     <HeroComp/>
     <CompaniesComp/>
     <CoursesSectionComp/>
+    <TestimonialSectionComp/>
+    <CallToActionComp/>
+    <FooterComp/>
    </div>
   )
 }

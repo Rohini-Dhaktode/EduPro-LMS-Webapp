@@ -16,12 +16,13 @@ const CourseCardComp = ({course}) => {
         <div className='flex items-center space-x-2'>
           <p>{calculateRating(course)}</p>
           <div className='flex'>
-            {[...Array(5)].map((_, i) => (<img key={i} src={assets.star} alt=""
+            {[...Array(5)].map((_, i) => (<img key={i} 
+            src={i <Math.floor(calculateRating(course)) ? assets.star : assets.star_blank} alt=""
             className='w-3.5 h-3.5'/>))}
           </div>
         </div>
 
-        <p className='text-gray-500'>22</p>
+        <p className='text-gray-500'>{course.courseRatings.length}</p>
       </div>
        <p className='text-base font-semibold text-gray-800'>{currency}{(course.coursePrice - course.discount * course.coursePrice/100).toFixed(2) }</p>
    </Link>

@@ -6,7 +6,7 @@ import { AppContext } from '../../context/AppContext'
 
 
 const NavbarComp = () => {
-  const {navigate} = useContext(AppContext)
+  const {navigate, isEducator} = useContext(AppContext)
   const isCourseListpage = location.pathname.includes('/course-list')
 
   const {openSignIn} = useClerk()
@@ -23,7 +23,7 @@ const NavbarComp = () => {
           {/* Hide buttons based on user logged in status */}
           {
             user && <>
-            <button>Become Educator</button>
+            <button onClick={() => {navigate('/educator')}}>{isEducator ? 'Educator dashbord' : 'Become Educator'}</button>
            <Link to='/my-enrollments'>My Enrollments</Link>
             </>
           }
@@ -44,7 +44,7 @@ const NavbarComp = () => {
         <div className='flex items-center gap-1 sm:gap-2 max-sm:text-xs'>
            {
             user && <>
-            <button>Become Educator</button>
+            <button onClick={() => {navigate('/educator')}}>{isEducator ? 'Educator dashbord' : 'Become Educator'}</button>
            <Link to='/my-enrollments'>My Enrollments</Link>
             </>
           }
