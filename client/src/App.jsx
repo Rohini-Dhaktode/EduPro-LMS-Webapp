@@ -12,6 +12,7 @@ import AddCoursePage from './pages/educator/AddCoursePage'
 import MyCoursesPage from './pages/educator/MyCoursesPage'
 import StudentsEnrolledPage from './pages/educator/StudentsEnrolledPage'
 import NavbarComp from './components/student/NavbarComp'
+import "quill/dist/quill.snow.css";
 
 
 const App = () => {
@@ -31,7 +32,7 @@ const App = () => {
 
         {/* educator (nested route) */}
         <Route path="/educator" element={<EducatorPage />}>
-          <Route path="educator" element={<DashboardPage />} />
+          <Route path="/educator" element={<DashboardPage />} />
           <Route path="add-course" element={<AddCoursePage />} />
           <Route path="my-courses" element={<MyCoursesPage />} />
           <Route path="student-enrolled" element={<StudentsEnrolledPage />} />
