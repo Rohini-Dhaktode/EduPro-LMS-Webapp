@@ -1,5 +1,5 @@
 import Course from "../models/Course.js"
-import { CourseProgress } from "../models/courseProgress.js"
+import { CourseProgress } from "../models/CourseProgress.js"
 import { Purchase } from "../models/Purchase.js"
 import User from "../models/User.js"
 import Stripe from 'stripe'
@@ -155,7 +155,7 @@ export const addUserRating = async(req , res) => {
        if(existingRatingIndex > -1){
            course.courseRatings[existingRatingIndex].rating = rating;
        }else {
-           course.courseRating.push({userId , rating});
+           course.courseRatings.push({userId , rating});
        }
 
        await course.save();
