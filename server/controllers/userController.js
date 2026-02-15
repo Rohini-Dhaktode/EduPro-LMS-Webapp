@@ -8,7 +8,7 @@ import Stripe from 'stripe'
 export const getUserData = async (req , res) => {
     try{
         const {userId} = req.auth()
-        const user = await User.findById({ clerkId: userId })
+        const user = await User.findById(userId)
 
         if(!user){
             return res.json({ success :false , message : 'User Not Found'})
@@ -110,7 +110,7 @@ export const updateUserCourseProgress = async(req, res) => {
       }
       
       res.json({success:true , message:'Progress Updated'})
-    }catch(errror){
+    }catch(error){
       res.json({success: false , message: error.message})
     }
 }
@@ -131,7 +131,7 @@ export const getUserCourseProgress = async(req, res) => {
 
 export const addUserRating = async(req , res) => {
     const {userId} = req.auth();
-    const {courseid , rating} = req.body;
+    const {courseId , rating} = req.body;
 
     if(!courseId || !userId || !rating || rating < 1 || rating > 5){
         return res.json({success: false , message : 'Invalid Details'})
@@ -146,7 +146,7 @@ export const addUserRating = async(req , res) => {
 
        const user = await User.findById(userId);
 
-       if(!user || user.enrolledCourses.includes(courseid)){
+       if(!user || !user.enrolledCourses.includes(courseId)){
         return res.json({ success: false , message : 'User has not purchases this course.'})
        }
 
